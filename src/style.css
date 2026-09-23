@@ -1,0 +1,81 @@
+@import "tailwindcss";
+
+/* Class-based dark mode: <html class="dark"> */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/*
+  Semantic color tokens (Flowbite-style names), so classes like
+  bg-neutral-primary, text-heading, text-body, text-fg-brand, border-default work.
+  Light values live here; dark values are overridden under .dark below.
+*/
+@theme {
+  --color-neutral-primary: #ffffff;          /* header, inputs */
+  --color-neutral-primary-soft: #f8fafc;     /* page background */
+  --color-neutral-secondary-soft: #f3f4f6;   /* sub-nav, table head, skeleton */
+  --color-neutral-tertiary: #e5e7eb;         /* hover background */
+  --color-surface: #ffffff;                  /* cards, modals */
+
+  --color-neutral-primary-medium: #ffffff;   /* dropdown menus */
+  --color-neutral-secondary-medium: #f3f4f6;
+  --color-neutral-tertiary-medium: #f3f4f6;  /* dropdown item hover */
+  --color-default-medium: #e5e7eb;
+  --color-brand-medium: #c7d2fe;             /* focus ring */
+
+  --radius-base: 0.5rem;                     /* rounded-base */
+
+  --color-heading: #111827;
+  --color-body: #4b5563;
+  --color-muted: #9ca3af;
+
+  --color-default: #e5e7eb;                  /* borders */
+  --color-default-strong: #d1d5db;           /* input borders */
+
+  --color-brand: #4f46e5;
+  --color-brand-strong: #4338ca;
+  --color-brand-soft: #eef2ff;
+  --color-fg-brand: #4f46e5;
+
+  --color-danger: #dc2626;
+  --color-danger-strong: #b91c1c;
+  --color-danger-soft: #fef2f2;
+  --color-fg-danger: #dc2626;
+}
+
+@layer base {
+  .dark {
+    color-scheme: dark;
+
+    --color-neutral-primary: #030712;
+    --color-neutral-primary-soft: #030712;
+    --color-neutral-secondary-soft: #111827;
+    --color-neutral-tertiary: #1f2937;
+    --color-surface: #111827;
+
+    --color-neutral-primary-medium: #111827;
+    --color-neutral-secondary-medium: #1f2937;
+    --color-neutral-tertiary-medium: #1f2937;
+    --color-default-medium: #374151;
+    --color-brand-medium: #3730a3;
+
+    --color-heading: #ffffff;
+    --color-body: #9ca3af;
+    --color-muted: #6b7280;
+
+    --color-default: #1f2937;
+    --color-default-strong: #374151;
+
+    --color-brand: #4f46e5;
+    --color-brand-strong: #6366f1;
+    --color-brand-soft: rgb(99 102 241 / 0.15);
+    --color-fg-brand: #818cf8;
+
+    --color-danger: #dc2626;
+    --color-danger-strong: #ef4444;
+    --color-danger-soft: rgb(220 38 38 / 0.15);
+    --color-fg-danger: #f87171;
+  }
+
+  html {
+    @apply bg-neutral-primary-soft text-heading antialiased;
+  }
+}
